@@ -1,0 +1,13 @@
+{
+  "name": "diagnosis-duel",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently -n server,client -c blue,green \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "test:engine": "node server/test-engine.js",
+    "test:api": "node server/test-api.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}

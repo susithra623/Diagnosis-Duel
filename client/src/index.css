@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@keyframes pop { 0% { transform: scale(.85); opacity: 0 } 60% { transform: scale(1.05) } 100% { transform: scale(1); opacity: 1 } }
+@keyframes slideUp { from { transform: translateY(12px); opacity: 0 } to { transform: none; opacity: 1 } }
+.animate-pop { animation: pop .5s ease-out both }
+.animate-slide { animation: slideUp .4s ease-out both }
+body { background: #f1f5f9; color: #0f172a; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+
+/* ===== Dark clinical command-center theme: remaps the utility classes used across the app ===== */
+:root { --bg:#0a1628; --card:#0f2038; --card2:#13294a; --line:#22406a; --txt:#e6eef9; --mut:#93aac8; }
+body { background: radial-gradient(1200px 600px at 80% -10%, #12315a 0%, var(--bg) 60%) fixed; color: var(--txt); min-height: 100vh; }
+.bg-white { background-color: var(--card) !important; }
+.bg-slate-50 { background-color: var(--card2) !important; }
+.bg-slate-100 { background-color: #17304f !important; }
+.bg-slate-200 { background-color: #1e3c66 !important; }
+.hover\:bg-slate-50:hover { background-color: var(--card2) !important; }
+.border-slate-100, .border-slate-200, .border-slate-300 { border-color: var(--line) !important; }
+.text-slate-900, .text-slate-800, .text-slate-700 { color: var(--txt) !important; }
+.text-slate-600, .text-slate-500 { color: var(--mut) !important; }
+.text-slate-400 { color: #7390b3 !important; }
+.text-\[\#0b1f3a\] { color: #7dd3fc !important; }
+.bg-\[\#0b1f3a\] { background-color: #0e7490 !important; }
+.hover\:bg-blue-900:hover { background-color: #0891b2 !important; }
+.bg-blue-700 { background-color: #0891b2 !important; } .hover\:bg-blue-800:hover { background-color: #06b6d4 !important; }
+.text-blue-700, .text-blue-800 { color: #38bdf8 !important; }
+.border-blue-700 { border-color: #38bdf8 !important; }
+.bg-green-50, .bg-green-100 { background-color: rgba(34,197,94,.13) !important; }
+.bg-amber-50, .bg-amber-100 { background-color: rgba(245,158,11,.14) !important; }
+.bg-red-50, .bg-red-100 { background-color: rgba(239,68,68,.14) !important; }
+.bg-blue-50, .bg-blue-50\/50, .hover\:bg-blue-50:hover { background-color: rgba(56,189,248,.10) !important; }
+.bg-purple-50 { background-color: rgba(168,85,247,.14) !important; }
+.border-green-200, .border-green-300 { border-color: rgba(34,197,94,.45) !important; }
+.border-amber-200, .border-amber-300 { border-color: rgba(245,158,11,.5) !important; }
+.border-red-200, .border-red-300 { border-color: rgba(239,68,68,.5) !important; }
+.border-blue-100, .border-blue-200 { border-color: rgba(56,189,248,.35) !important; }
+.border-purple-200 { border-color: rgba(168,85,247,.45) !important; }
+.text-green-700, .text-green-800, .text-green-900 { color: #86efac !important; }
+.text-amber-700, .text-amber-800, .text-amber-900, .text-amber-950 { color: #fcd34d !important; }
+.text-red-700, .text-red-800 { color: #fca5a5 !important; }
+.text-blue-950 { color: #bae6fd !important; } .text-purple-900, .text-purple-950 { color: #e9d5ff !important; }
+input, select { background-color: var(--card2); color: var(--txt); }
+html { background: #0a1628; }
+header[class] { background: #06101f !important; border-bottom: 1px solid var(--line); }
+.glow { box-shadow: 0 0 0 1px rgba(56,189,248,.35), 0 0 24px rgba(56,189,248,.18); }
+.grad-xp { background: linear-gradient(90deg, #a855f7, #38bdf8); }
+@keyframes missionIn { 0% { opacity: 0; letter-spacing: .6em } 30% { opacity: 1 } 100% { opacity: 0; letter-spacing: .15em } }
+.mission-intro { animation: missionIn 1.6s ease-out both; pointer-events: none; }
+@keyframes scan { 0% { background-position: 0 0 } 100% { background-position: 200% 0 } }
+.scanning { background: linear-gradient(90deg, transparent, rgba(56,189,248,.35), transparent) 0 0 / 50% 100% no-repeat; animation: scan 1s linear infinite; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
